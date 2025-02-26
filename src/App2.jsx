@@ -69,11 +69,33 @@ function App2() {
             <Route path='location' element={<Location />}></Route>
           </Route>
           <Route path='/profile' element={<ProfilePage />} />
+          <Route path='/board/:id' element={<BoardPage />} />
         </Routes>
       </BrowserRouter>
     </>
   )
 }
 
-//3. useNavigate 사용용
+//3. useNavigate 사용
+{
+  /* <button onClick={() => { navigate('/about'); }}>
+  어바웃 페이지로 이동하기
+</button> */
+}
+
+{
+  /* <button onClick={() => { navigate(-1); }} >
+이전 페이지로 이동하기
+</button> */
+}
+
+//4. 파라미터 처리 하기
+// url의 파라미터 값을 가져오기 위해 useParams()
+// board/1 + get
+//(✳✳ url :http://localhost:3000/board/21 인 경우)
+// 👀 <Route path="board/:id" element={<BoardPage />} /> 👀
+// const params = useParams();
+// console.log(params);
+// --console--
+// {id : 21}
 export default App2

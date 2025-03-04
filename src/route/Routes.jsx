@@ -1,8 +1,13 @@
+import Counter from '../components/Counter'
+import { CounterProvider } from '../contexts/ConterContext'
 import AxiosClient from '../pages/AxiosClient'
 import AxiosGetPage from '../pages/AxiosGetPage'
 import BoardPage from '../pages/BoardPage'
 import BootStrapPage from '../pages/BootStrapPage'
 import ConditionalPage from '../pages/ConditionalPage'
+import ContextNotUsePage from '../pages/ContextNotUsePage'
+import ContextUsedPage from '../pages/ContextUsedPage'
+import CounterContextPage from '../pages/CounterContextPage'
 import CounterPage from '../pages/CounterPage'
 import HelloPage from '../pages/HelloPage'
 import HomePage from '../pages/HomePage'
@@ -84,6 +89,27 @@ const routes = [
     path: '/axiosclient',
     element: <AxiosClient />,
     title: 'axios-client',
+  },
+  {
+    path: '/contextnotuse',
+    element: <ContextNotUsePage />,
+    title: '컨텍스트API-사용안함',
+  },
+  {
+    path: '/contextuse',
+    element: <ContextUsedPage />,
+    title: '컨텍스트API-사용',
+  },
+  {
+    path: '/contextapply',
+    element: (
+      <CounterProvider age='5'>
+        <div>머리말</div>
+        <CounterContextPage />
+        <div>꼬리말</div>
+      </CounterProvider>
+    ),
+    title: '컨텍스트API-활용-카운터',
   },
 ]
 
